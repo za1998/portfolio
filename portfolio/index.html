@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modern Personal Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <div class="profile-card">
+    <h1>Hello 👋</h1>
+    <h2>Saya <span class="highlight">Web Designer</span> & <span class="highlight">Wordpress Developer</span></h2>
+    <h3><span class="typing"></span></h3>
+
+    <div class="photo-container">
+      <img src="images/fotome.png" alt="Foto Saya" class="profile-photo glow">
+    </div>
+
+    <p class="quote">"Think creatively. Act in a solution-oriented manner. Work without limits."</p>
+
+    <div class="social-icons">
+      <a href="https://t.me/+5BLQvYeu-X45N2Jl" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="https://whatsapp.com/channel/0029Vb6VsI40lwgtpd5YIo3K" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://x.com/apakuza1998" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/no_risk_no_reward_1998?igsh=aHM4d3FmbHlnaXV6" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+<script>
+  const typingText = document.querySelector(".typing");
+  const words = ["UI/UX Enthusiast", "Frontend Developer", "Graphic Editor", "Content Creator"];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let currentWord = "";
+  let isDeleting = false;
+
+  function type() {
+    if (wordIndex === words.length) wordIndex = 0;
+    currentWord = words[wordIndex];
+
+    if (isDeleting) {
+      typingText.textContent = currentWord.substring(0, charIndex--);
+      if (charIndex < 0) {
+        isDeleting = false;
+        wordIndex++;
+      }
+    } else {
+      typingText.textContent = currentWord.substring(0, charIndex++);
+      if (charIndex > currentWord.length) {
+        isDeleting = true;
+        setTimeout(type, 1000);
+        return;
+      }
+    }
+    setTimeout(type, isDeleting ? 50 : 100);
+  }
+
+  type();
+</script>
+
+</body>
+</html>
