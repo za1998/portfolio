@@ -1,0 +1,202 @@
+/* Reset and base setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom right, #dbdbdb, #d0f0ff);
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 20px;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.profile-card {
+  text-align: center;
+  padding: 30px 20px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 20px;
+  background: linear-gradient(to bottom right, #ffffff, #e6f7ff);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeUp 1.5s ease forwards;
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.highlight {
+  color: #007acc;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.photo-container {
+  background: linear-gradient(135deg, #d0f0ff, #f0f8ff);
+  width: 180px;
+  height: 180px;
+  border-radius: 10%;
+  overflow: hidden;
+  border: 5px solid rgba(0, 170, 255, 0.4);
+  margin: 0 auto 20px;
+  box-shadow: 0 0 30px rgba(0, 170, 255, 0.4);
+  animation: softPulse 4s ease-in-out infinite;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quote {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  font-style: italic;
+  color: #333;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 26px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007acc;
+  transform: scale(1.2) rotate(5deg);
+}
+
+.contact-form {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.contact-form h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #007acc;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  background: #f9f9f9;
+  color: #000;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form button {
+  padding: 12px;
+  background: #007acc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #005f99;
+  transform: scale(1.05);
+}
+
+.portfolio-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 50px;
+  background: #007acc;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  transition: all 0.35s ease;
+}
+
+.portfolio-button:hover {
+  background: #005f99;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #007acc;
+}
+
+@media screen and (max-width: 450px) {
+  .profile-card {
+    max-width: 100%;
+    padding: 25px 15px;
+  }
+
+  h1 { font-size: 26px; }
+  h2 { font-size: 18px; }
+  h3 { font-size: 14px; }
+  .quote { font-size: 13px; }
+  .photo-container {
+    width: 140px;
+    height: 140px;
+  }
+  .social-icons a {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h1 { font-size: 22px; }
+  h2 { font-size: 16px; }
+  h3 { font-size: 13px; }
+  .quote { font-size: 12px; }
+}
